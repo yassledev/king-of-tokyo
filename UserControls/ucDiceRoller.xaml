@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="KingOfTokyo.UserControls.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KingOfTokyo.UserControls"
+             mc:Ignorable="d" Height="512.479" Width="534.174" Foreground="{x:Null}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/KingOfTokyo;component/Resources/detector.png"/>
+    </UserControl.Background>
+    <Viewbox Margin="0,0,0.4,-0.2" Stretch="Fill">
+        <Grid Height="513" Width="534">
+            <Button x:Name="btn_handle_roll" HorizontalAlignment="Left" Height="66" Margin="218,16,0,0" VerticalAlignment="Top" Width="99" Background="{x:Null}" Content="Roll"/>
+            <Button x:Name="btn_dice_1" Content="" HorizontalAlignment="Left" Height="75" Margin="113,190,0,0" VerticalAlignment="Top" Width="75" Tag="1"/>
+            <Button x:Name="btn_dice_2" Content="" HorizontalAlignment="Left" Height="75" Margin="221,190,0,0" VerticalAlignment="Top" Width="75" Tag="2"/>
+            <Button x:Name="btn_dice_3" Content="" HorizontalAlignment="Left" Height="75" Margin="343,190,0,0" VerticalAlignment="Top" Width="75" Tag="3"/>
+            <Button x:Name="btn_dice_4" Content="" HorizontalAlignment="Left" Height="75" Margin="113,298,0,0" VerticalAlignment="Top" Width="75" Tag="4"/>
+            <Button x:Name="btn_dice_5" Content="" HorizontalAlignment="Left" Height="75" Margin="221,298,0,0" VerticalAlignment="Top" Width="75" Tag="5"/>
+            <Button x:Name="btn_dice_6" Content="" HorizontalAlignment="Left" Height="75" Margin="343,298,0,0" VerticalAlignment="Top" Width="75" Tag="6"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

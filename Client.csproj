@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0181C16A-39EB-4ADC-8AF0-97E195EC7215}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KingOfTokyo</RootNamespace>
+    <AssemblyName>KingOfTokyo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Views\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\Helpers.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="Models\Cards\Card.cs" />
+    <Compile Include="Models\Cards\CardAction.cs" />
+    <Compile Include="Models\Cards\CardPower.cs" />
+    <Compile Include="Models\Dices\Dice.cs" />
+    <Compile Include="Models\Dices\DiceRoller.cs" />
+    <Compile Include="Models\Game\Board.cs" />
+    <Compile Include="Models\Game\Jeu.cs" />
+    <Compile Include="Models\Game\Location.cs" />
+    <Compile Include="Models\Game\State.cs" />
+    <Compile Include="Models\Monsters\Monster.cs" />
+    <Compile Include="Models\Monsters\Player.cs" />
+    <Compile Include="Models\Network\Command.cs" />
+    <Compile Include="Models\Network\Client.cs" />
+    <Compile Include="Models\Network\Packet.cs" />
+    <Compile Include="Models\Network\Server.cs" />
+    <Compile Include="UserControls\ucCharacter.xaml.cs">
+      <DependentUpon>ucCharacter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucMonsterInfo.xaml.cs">
+      <DependentUpon>ucMonsterInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl1.xaml.cs">
+      <DependentUpon>ucDiceRoller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CharacterSelection.xaml.cs">
+      <DependentUpon>CharacterSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GameBoard.xaml.cs">
+      <DependentUpon>GameBoard.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\ucCharacter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucDiceRoller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ucMonsterInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CharacterSelection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GameBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Views\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\m_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\m_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\m_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\m_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bg_selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\detector.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dice_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dice_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dice_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dice_attack.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dice_energy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\dice_health.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\face\face_beerus.png" />
+    <Resource Include="Resources\face\face_black.png" />
+    <Resource Include="Resources\face\face_friza.png" />
+    <Resource Include="Resources\face\face_goku.png" />
+    <Resource Include="Resources\face\face_hit.png" />
+    <Resource Include="Resources\face\face_vegeta.png" />
+    <Resource Include="menu.png" />
+    <Resource Include="Resources\body\body_goku.png" />
+    <Resource Include="Resources\body\body_vegeta.png" />
+    <Resource Include="Resources\body\body_beerus.png" />
+    <Resource Include="Resources\body\body_friza.png" />
+    <Resource Include="Resources\body\body_hit.png" />
+    <Resource Include="Resources\body\body_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background\bg_selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background\board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\card\card_beerus.png" />
+    <Resource Include="Resources\card\card_black.png" />
+    <Resource Include="Resources\card\card_friza.png" />
+    <Resource Include="Resources\card\card_goku.png" />
+    <Resource Include="Resources\card\card_hit.png" />
+    <Resource Include="Resources\card\card_vegeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cardgame\1.png" />
+    <Resource Include="Resources\cardgame\10.png" />
+    <Resource Include="Resources\cardgame\11.png" />
+    <Resource Include="Resources\cardgame\12.png" />
+    <Resource Include="Resources\cardgame\13.png" />
+    <Resource Include="Resources\cardgame\14.png" />
+    <Resource Include="Resources\cardgame\15.png" />
+    <Resource Include="Resources\cardgame\16.png" />
+    <Resource Include="Resources\cardgame\17.png" />
+    <Resource Include="Resources\cardgame\18.png" />
+    <Resource Include="Resources\cardgame\19.png" />
+    <Resource Include="Resources\cardgame\2.png" />
+    <Resource Include="Resources\cardgame\20.png" />
+    <Resource Include="Resources\cardgame\21.png" />
+    <Resource Include="Resources\cardgame\22.png" />
+    <Resource Include="Resources\cardgame\23.png" />
+    <Resource Include="Resources\cardgame\24.png" />
+    <Resource Include="Resources\cardgame\25.png" />
+    <Resource Include="Resources\cardgame\26.png" />
+    <Resource Include="Resources\cardgame\27.png" />
+    <Resource Include="Resources\cardgame\28.png" />
+    <Resource Include="Resources\cardgame\29.png" />
+    <Resource Include="Resources\cardgame\3.png" />
+    <Resource Include="Resources\cardgame\30.png" />
+    <Resource Include="Resources\cardgame\31.png" />
+    <Resource Include="Resources\cardgame\32.png" />
+    <Resource Include="Resources\cardgame\33.png" />
+    <Resource Include="Resources\cardgame\34.png" />
+    <Resource Include="Resources\cardgame\35.png" />
+    <Resource Include="Resources\cardgame\36.png" />
+    <Resource Include="Resources\cardgame\37.png" />
+    <Resource Include="Resources\cardgame\38.png" />
+    <Resource Include="Resources\cardgame\39.png" />
+    <Resource Include="Resources\cardgame\4.png" />
+    <Resource Include="Resources\cardgame\40.png" />
+    <Resource Include="Resources\cardgame\41.png" />
+    <Resource Include="Resources\cardgame\42.png" />
+    <Resource Include="Resources\cardgame\43.png" />
+    <Resource Include="Resources\cardgame\44.png" />
+    <Resource Include="Resources\cardgame\45.png" />
+    <Resource Include="Resources\cardgame\46.png" />
+    <Resource Include="Resources\cardgame\47.png" />
+    <Resource Include="Resources\cardgame\48.png" />
+    <Resource Include="Resources\cardgame\49.png" />
+    <Resource Include="Resources\cardgame\5.png" />
+    <Resource Include="Resources\cardgame\50.png" />
+    <Resource Include="Resources\cardgame\51.png" />
+    <Resource Include="Resources\cardgame\52.png" />
+    <Resource Include="Resources\cardgame\53.png" />
+    <Resource Include="Resources\cardgame\54.png" />
+    <Resource Include="Resources\cardgame\55.png" />
+    <Resource Include="Resources\cardgame\56.png" />
+    <Resource Include="Resources\cardgame\57.png" />
+    <Resource Include="Resources\cardgame\58.png" />
+    <Resource Include="Resources\cardgame\59.png" />
+    <Resource Include="Resources\cardgame\6.png" />
+    <Resource Include="Resources\cardgame\60.png" />
+    <Resource Include="Resources\cardgame\61.png" />
+    <Resource Include="Resources\cardgame\62.png" />
+    <Resource Include="Resources\cardgame\63.png" />
+    <Resource Include="Resources\cardgame\64.png" />
+    <Resource Include="Resources\cardgame\65.png" />
+    <Resource Include="Resources\cardgame\66.png" />
+    <Resource Include="Resources\cardgame\7.png" />
+    <Resource Include="Resources\cardgame\8.png" />
+    <Resource Include="Resources\cardgame\9.png" />
+    <Resource Include="Resources\cardgame\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

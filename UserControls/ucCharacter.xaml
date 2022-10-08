@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="KingOfTokyo.UserControls.ucCharacter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KingOfTokyo.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Width="202.098">
+    <Viewbox Stretch="Fill">
+        <Border x:Name="uc_grid" Height="450" Width="200">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.145"/>
+            </Border.Background>
+            <Grid>
+                <Image x:Name="img_bg" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="200" Margin="2,0,-2,-0.4" OpacityMask="Black"/>
+                <Label x:Name="lbl_pseudo" Content="Label" HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="200" FontWeight="Bold" FontSize="20" Foreground="White" FontFamily="Yu Gothic UI" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center">
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" Opacity="0.31">
+                            <GradientStop Color="#FFBC780E" Offset="0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+            </Grid>
+        </Border>
+    </Viewbox>
+</UserControl>
